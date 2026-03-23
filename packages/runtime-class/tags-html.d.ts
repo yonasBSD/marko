@@ -529,6 +529,26 @@ declare global {
       }
       interface Button extends HTMLAttributes<HTMLButtonElement> {
         /**
+         * Specifies the action to be performed on an element being controlled specified via the commandfor attribute.
+         * @see https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-command
+         */
+        command?:
+          | AttrMissing
+          | "show-modal"
+          | "close"
+          | "request-close"
+          | "show-popover"
+          | "hide-popover"
+          | "toggle-popover"
+          | (string & {});
+
+        /**
+         * Specifies the id of the element being controlled
+         * @see https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-commandfor
+         */
+        commandfor?: AttrString;
+
+        /**
          * Specifies whether the button should be disabled.
          * @see https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled
          */
